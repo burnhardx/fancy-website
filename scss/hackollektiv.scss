@@ -1,0 +1,55 @@
+
+@import url(https://fonts.googleapis.com/css?family=Cinzel|Fjalla+One|Overpass+Mono|Playfair+Display+SC|Roboto|Roboto+Mono|Roboto+Slab|Source+Code+Pro|Vidaloka|Yanone+Kaffeesatz);
+
+@import "libs/simple-grid";
+@import "heroes/gifted";
+
+$font-family: 'Cinzel', Helvetica, sans-serif;
+$font-stack: 'Cinzel', Helvetica, sans-serif;
+$primary-color: white;
+
+$maxWidth: 70em;
+$secionHeight: 50vh;
+
+
+body{
+  font: 100% $font-stack;
+  background-color: black;
+  color: $primary-color;
+}
+
+.headline {
+}
+
+.container {
+  width: $maxWidth;
+  max-width: $maxWidth;
+}
+
+.section {
+  height:$secionHeight;
+  font-family: $font-stack;
+  border:2px solid white;
+  border-radius:20px;
+  margin-bottom:20px;
+}
+
+.sectionHeading{
+  float: left;
+  width: 100%;
+  padding-bottom: 50px;
+  margin-bottom: 0px;
+  clear: both;
+}
+
+.hidden {
+  visibility: hidden;
+}
+.visible {
+  visibility: visible;
+}
+
+.magictime {
+  -webkit-animation-duration: 1s !important;
+  animation-duration: 1s !important;
+}

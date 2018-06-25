@@ -1,0 +1,27 @@
+{
+  "name": "hackollektiv",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test":"mocha",
+    "dist-css": "node-sass --include-path scss scss/hackollektiv.scss   public/css/hackollektiv.css",
+    "watch-scss": "nodemon --watch scss -x \"npm run dist-css\"",
+    "watch:osx": "watch 'npm run dist-css' scss/",
+    "dist-client": "browserify src/client/hackollektiv.js -t [ babelify --presets [ es2016 ] ] > public/js/hackollektiv.js",
+    "uglify-client": "uglifyjs public/js/hackollektiv.js -c -m -o public/js/hackollektiv.js",
+    "client": "npm run dist-css & npm run dist-client && npm run uglify-client"
+  },
+  "author": "Bernhard Vollmer <burn.hard.x@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^4.0.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-es2016": "^6.24.1",
+    "babelify": "^8.0.0",
+    "browserify": "^16.2.2",
+    "node-sass": "^4.9.0",
+    "uglify-es": "^3.3.9",
+    "watch": "^1.0.2"
+  }
+}
