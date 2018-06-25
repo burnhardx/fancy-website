@@ -1,12 +1,1 @@
-(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
-module.exports = selector => {
-    const result = Array.from(document.querySelectorAll(selector));
-    return !result ? [] : result.length == 1 ? result[0] : result;
-};
-
-},{}],2:[function(require,module,exports){
-const dom = require("./dom");
-
-document.addEventListener("DOMContentLoaded", evt => {});
-
-},{"./dom":1}]},{},[2]);
+!function(){return function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var d=new Error("Cannot find module '"+i+"'");throw d.code="MODULE_NOT_FOUND",d}var a=n[i]={exports:{}};e[i][0].call(a.exports,function(r){return o(e[i][1][r]||r)},a,a.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}}()({1:[function(r,e,n){e.exports=(r=>{const e=Array.from(document.querySelectorAll(r));return e?1==e.length?e[0]:e:[]})},{}],2:[function(r,e,n){r("./dom");document.addEventListener("DOMContentLoaded",r=>{})},{"./dom":1}]},{},[2]);

@@ -5,14 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha --recursive -r jsdom-global/register -r document-register-element",
-    "dist-css": "node-sass --include-path scss scss/hackollektiv.scss   public/css/hackollektiv.css",
-    "watch-scss": "nodemon --watch scss -x \"npm run dist-css\"",
-    "watch:osx": "watch 'npm run dist-css' scss/",
-    "dist-client": "browserify src/client/hackollektiv.js -t [ babelify --presets [ es2016 ] ] > public/js/hackollektiv.js",
-    "uglify-client": "uglifyjs public/js/hackollektiv.js -c -m -o public/js/hackollektiv.js",
-    "client": "npm run dist-css & npm run dist-client && npm run uglify-client",
-    "dist-components": "node src/jobs/deployComponents",
-    "watch-components": "watch 'npm run dist-components' src/components"
+    "dist:scss": "node-sass --include-path scss scss/hackollektiv.scss   public/css/hackollektiv.css",
+    "watch:scss": "watch 'npm run dist:scss' scss/",
+    "dist:client": "browserify src/client/hackollektiv.js -t [ babelify --presets [ es2016 ] ] > public/js/hackollektiv.js",
+    "uglify:client": "uglifyjs public/js/hackollektiv.js -c -m -o public/js/hackollektiv.js",
+    "client": "npm run dist:scss & npm run dist:client && npm run uglify:client",
+    "dist:components": "node src/jobs/deployComponents",
+    "watch:components": "watch 'npm run dist:components' src/components"
   },
   "author": "Bernhard Vollmer <burn.hard.x@gmail.com>",
   "license": "ISC",
