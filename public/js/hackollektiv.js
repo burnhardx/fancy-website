@@ -1,1 +1,12 @@
-!function(){return function e(t,n,i){function r(s,l){if(!n[s]){if(!t[s]){var d="function"==typeof require&&require;if(!l&&d)return d(s,!0);if(o)return o(s,!0);var c=new Error("Cannot find module '"+s+"'");throw c.code="MODULE_NOT_FOUND",c}var a=n[s]={exports:{}};t[s][0].call(a.exports,function(e){return r(t[s][1][e]||e)},a,a.exports,e,t,n,i)}return n[s].exports}for(var o="function"==typeof require&&require,s=0;s<i.length;s++)r(i[s]);return r}}()({1:[function(e,t,n){const i="animate-in",r=700,o=(e,t)=>{if(!t)return[];const n=t.getAttribute("data-"+e);return n?n.split(" "):[]};t.exports=class{constructor(e,t){this.delay=t||r,this.elements=e,this.elements.forEach(e=>{e.classList.add("hidden")});const n=this,i=e=>{n.onScroll()};window.addEventListener("load",i),window.addEventListener("scroll",i)}areAnimateInClassesAdded(e){return 0!=o(i,e).filter(t=>!e.classList.contains(t)).length}isElementVisible(e){const t=e.getBoundingClientRect();return t.top>=0&&t.left>=0&&t.bottom<=(window.innerHeight||document.documentElement.clientHeight)&&t.right<=(window.innerWidth||document.documentElement.clientWidth)}onScroll(){const e=this.elements.filter(this.isElementVisible).filter(this.areAnimateInClassesAdded),t=(e,t)=>{const n=o(e,t);void 0!==t&&(t.classList.remove("hidden"),t.classList.add("visible"),n.forEach(e=>{t.classList.add(e)}))},n=this,r=(o,s)=>{setTimeout(()=>{t(i,o),s!=e.length-1&&r(e[++s],s)},n.delay)};1==e.length?t(i,e[0]):r(e[0],0)}}},{}],2:[function(e,t,n){t.exports=(e=>{const t=Array.from(document.querySelectorAll(e));return t?1==t.length?t[0]:t:[]})},{}],3:[function(e,t,n){const i=e("./dom"),r=e("./animateGivenElementsIfVisible");document.addEventListener("DOMContentLoaded",e=>{new r(i(".animated"))})},{"./animateGivenElementsIfVisible":1,"./dom":2}]},{},[3]);
+(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
+module.exports = selector => {
+    const result = Array.from(document.querySelectorAll(selector));
+    return !result ? [] : result.length == 1 ? result[0] : result;
+};
+
+},{}],2:[function(require,module,exports){
+const dom = require("./dom");
+
+document.addEventListener("DOMContentLoaded", evt => {});
+
+},{"./dom":1}]},{},[2]);

@@ -1,0 +1,18 @@
+<% if(styles.length!=0){ %>
+    <% _.forEach(styles, style=>{ %>
+        <style>
+            <%=style%>
+        </style>
+    <% }) %>
+<% } %>
+<% if(markups.length!=0){ %>
+    <% _.forEach(markups, markup=>{ %>
+        <script type='text/template' id="<%=markup.id%>">
+            <%=markup.html%>
+        </script>
+    <% }) %>
+<% } %>
+
+<script>
+    <%=script%>
+</script>

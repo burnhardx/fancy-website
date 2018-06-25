@@ -4,22 +4,29 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test":"mocha",
+    "test": "mocha --recursive -r jsdom-global/register -r document-register-element",
     "dist-css": "node-sass --include-path scss scss/hackollektiv.scss   public/css/hackollektiv.css",
     "watch-scss": "nodemon --watch scss -x \"npm run dist-css\"",
     "watch:osx": "watch 'npm run dist-css' scss/",
     "dist-client": "browserify src/client/hackollektiv.js -t [ babelify --presets [ es2016 ] ] > public/js/hackollektiv.js",
     "uglify-client": "uglifyjs public/js/hackollektiv.js -c -m -o public/js/hackollektiv.js",
-    "client": "npm run dist-css & npm run dist-client && npm run uglify-client"
+    "client": "npm run dist-css & npm run dist-client && npm run uglify-client",
+    "dist-components": "node src/jobs/deployComponents",
+    "watch-components": "watch 'npm run dist-components' src/components"
   },
   "author": "Bernhard Vollmer <burn.hard.x@gmail.com>",
   "license": "ISC",
   "devDependencies": {
-    "mocha": "^4.0.0",
     "babel-core": "^6.26.3",
     "babel-preset-es2016": "^6.24.1",
     "babelify": "^8.0.0",
     "browserify": "^16.2.2",
+    "chai": "^4.1.2",
+    "document-register-element": "^1.9.1",
+    "jsdom": "^11.11.0",
+    "jsdom-global": "^3.0.2",
+    "lodash": "^4.17.10",
+    "mocha": "^5.2.0",
     "node-sass": "^4.9.0",
     "uglify-es": "^3.3.9",
     "watch": "^1.0.2"
