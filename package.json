@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha --recursive -r jsdom-global/register -r document-register-element",
-    "dist:scss": "node-sass --include-path scss scss/hackollektiv.scss   public/css/hackollektiv.css",
+    "dist:scss": "node-sass --include-path scss scss/hackollektiv.scss   public/css/styles.css",
     "watch:scss": "watch 'npm run dist:scss' scss/",
-    "dist:client": "browserify src/client/hackollektiv.js -t [ babelify --presets [ es2016 ] ] > public/js/hackollektiv.js",
-    "uglify:client": "uglifyjs public/js/hackollektiv.js -c -m -o public/js/hackollektiv.js",
+    "dist:client": "browserify src/client/hackollektiv.js -t [ babelify --presets [ es2016 ] ] > public/js/output.js",
+    "uglify:client": "uglifyjs public/js/hackollektiv.js -c -m -o public/js/output.js",
     "client": "npm run dist:scss & npm run dist:client && npm run uglify:client",
     "dist:components": "node src/jobs/deployComponents",
     "watch:components": "watch 'npm run dist:components' src/components"

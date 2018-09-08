@@ -1,15 +1,15 @@
 # hackollektiv
 
-**Distribute src/client/hackollektiv.js**
+**Distribute src/client/output.js**
 
-This Script will browserify und uglify src/client/hackollektiv.js. Afterwards public/js/hackollektiv.js will be replaced.
+This Script will browserify und uglify src/client/hackollektiv.js. Afterwards public/js/output.js will be replaced.
 ```javascript
 npm run client
 ```
 
 **Compile SASS**
 
-This script will compile scss/hackollektiv.scss to public/css/hackollektiv.css
+This script will compile scss/hackollektiv.scss to public/css/styles.css
 ```javascript
 npm run dist:scss
 ```
